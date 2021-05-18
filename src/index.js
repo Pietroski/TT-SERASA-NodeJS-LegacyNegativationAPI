@@ -4,9 +4,9 @@ const app = express();
 const port = 7007;
 
 app.get('/v1/negativated/:id', (req, res) => {
-    res.send(JSON.stringify({
+    res.send({
         "error": "API endpoint DEPRECATED -> not able to retrieve the wished data",
-    }))
+    })
 })
 
 app.get('/v1/list-negativated', (req, res) => {
@@ -14,9 +14,9 @@ app.get('/v1/list-negativated', (req, res) => {
         cv["id"] = i + 1;
         return cv
     })
-    res.send(JSON.stringify({
+    res.send({
         "negativated": {...ListWithID}
-    }))
+    })
 })
 
 app.listen(port, () => {
